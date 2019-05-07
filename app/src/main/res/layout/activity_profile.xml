@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/img"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_below="@id/app_bar"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:foregroundGravity="center" />-->
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/app_bar"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="20sp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_name"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp">
+
+        <RadioGroup
+            android:id="@+id/rdbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp">
+
+            <RadioButton
+                android:id="@+id/radioMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="male"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radioFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="female" />
+
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/rdbtn"
+            android:layout_marginTop="3dp"
+            android:hint="enter age"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/residence"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/age"
+            android:layout_marginTop="3dp"
+            android:hint="enter city of residence"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/type"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/residence"
+            android:layout_marginTop="3dp"
+            android:hint="enter diabetes type"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/select_doctor"
+            android:layout_marginTop="5dp"
+            android:text="submit" />
+
+        <Button
+            android:id="@+id/select_doctor"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/type"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:text="select a doctor by name" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textAllCaps="false"
+            android:text="change doctor"
+            android:layout_below="@id/type"
+            android:layout_toRightOf="@id/select_doctor"
+            android:layout_marginLeft="20dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
