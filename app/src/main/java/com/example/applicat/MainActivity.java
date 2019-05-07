@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,6 +24,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.applicat.keydown.EmergencyButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -62,11 +64,14 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
 
     LineGraphSeries series;
+    EmergencyButton emergencyButton;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.profile, menu);
+        emergencyButton = new EmergencyButton();
+
         return true;
     }
 
@@ -207,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.contacts:
-                        Intent c = new Intent(MainActivity.this, Contacts.class);
+                        Intent c = new Intent(MainActivity.this, EmergencyTestActivity.class);
                         startActivity(c);
                         break;
                 }
@@ -231,6 +236,12 @@ public class MainActivity extends AppCompatActivity {
             finish();
 
         }
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        return emergencyButton.sense(this,keyCode,event);
+
     }
 }
 

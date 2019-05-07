@@ -7,11 +7,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.applicat.keydown.EmergencyButton;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -30,12 +32,14 @@ public class Login extends AppCompatActivity {
     EditText email, password;
     Button loginButton, registerButton, forgotPassword;
     FirebaseAuth firebaseAuth;
+    EmergencyButton emergencyButton;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        emergencyButton = new EmergencyButton();
 
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
@@ -92,6 +96,13 @@ public class Login extends AppCompatActivity {
         });
 
 
+
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        return emergencyButton.sense(this,keyCode,event);
 
     }
 }

@@ -3,6 +3,8 @@
     package="com.example.applicat">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".Offline"
@@ -12,6 +14,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".RemoveNumber" android:label="Remove Number" android:icon="@drawable/icons8_phone_48"></activity>
+        <activity android:name=".EditEmergencyMessage" android:label="Edit Message"  android:icon="@drawable/icons8_sms_48"/>
+        <activity android:name=".ViewNumber" android:label="Emergency Numbers"  android:icon="@drawable/icons8_phone_48"/>
+        <activity android:name=".EmergencyTestActivity" android:label="Emergency Setting " android:icon="@drawable/icons8_telephone_48" />
+        <activity android:name=".SendSMS" android:label="sent" />
         <activity android:name=".Profile"></activity>
         <activity android:name=".messaging_Adapter" />
         <activity android:name=".Register" />
